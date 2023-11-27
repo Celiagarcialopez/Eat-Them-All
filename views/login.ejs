@@ -1,0 +1,42 @@
+<%- include('head') %>
+<link rel="stylesheet" href="/stylesheets/home.css">
+<title>Login</title>
+</head>
+<%- include('navbar') %>  
+
+<main>
+
+  <main class="container-fluid">
+    <section class="row d-flex section1">
+      <div class="col-12 col-md-6 d-flex justify-content-center loginimg">
+        <img src="/images/wb.png" alt="lettering de bienvenida">
+      </div>
+
+      <div class="col-12 col-md-6 d-flex flex-column justify-content-center login">
+        <div class="col-12">
+          <h3>Ya te echabamos de menos...</h3>
+        </div>
+        <form action="/login" method="post">
+          <input 
+              type="text"
+              placeholder="email"
+              name="email"
+          >
+          <input 
+              type="password"
+              placeholder="password"
+              name="password"
+          >
+          <h3 style="color:red"><%= typeof message != 'undefined' ? message : null %></h3>
+          <button>Aceptar</button>
+          <a href="/">
+              <button type="button">Cancelar</button>
+          </a>
+        </form>
+      </div>
+    </section>
+  </main>
+  
+</main>
+
+<%- include('footer') %>

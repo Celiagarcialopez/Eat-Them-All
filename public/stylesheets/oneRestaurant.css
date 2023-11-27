@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Passion+One:wght@400;700&display=swap');
+
+* {
+  font-family: 'Libre Baskerville', serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+h2 {
+  color: #F7941D !important; 
+}
+h5 {
+  padding: 0.5rem;
+}
+nav {
+  background-color: #f3f2c7 !important;
+}
+img {
+  width: 100%;
+}
+.info {
+  background-color: #f3f2c7;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.restaurantpic {
+  padding-right: 0 !important;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+@media (width < 576px) {
+  .restaurantpic {
+    padding-left: 0 !important;
+  }
+  .restaurant {
+    padding: 2rem;
+  }
+  .fichas {
+    text-align: center;
+  }
+  .restaurant{
+    padding: 0 !important;
+  }
+}

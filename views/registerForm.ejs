@@ -1,0 +1,83 @@
+<%- include('head') %>
+<link rel="stylesheet" href="/stylesheets/home.css">
+<link rel="stylesheet" href="/stylesheets/home.css">
+
+<%- include('navbar') %>
+  
+<section class="ornament">
+</section>
+<main class="container-xxl">
+  <section class="row p-5 register">
+        <div class="col-12">
+          <h1>Regístrate</h1>
+          <p>No pierdas visibilidad por no estar en la mejor recopilación de restauración online.</p>
+        </div>
+        <div class="col-12 p-2">
+          <form
+            action="/register"
+            method="post"
+            enctype="multipart/form-data"
+            >
+            <input
+              type="text"
+              name="name"
+              placeholder="Nombre del restaurante"
+            >
+          <input 
+            type="text"
+            name="style"
+            placeholder="Tipo de comida"
+          >
+          </div>
+          <div class="col-12 p-2">
+          <input
+            type="text"
+            name="restaurant_description"
+            placeholder= "Descripción" 
+            >
+          </div>
+
+          <div class="col-12 p-2">
+            <input
+            type="text"
+            name="phone_number"
+            placeholder="Número de teléfono"
+            >
+            <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            >
+          </div>
+          <div class="col-12 p-2">
+            <input
+              type="password"
+              name="password"
+              placeholder="Contraseña"
+            >
+          </div>
+          <div class="col-12">
+            <label for="file">Sube una foto:</label>
+            <label class="label-img" for="file"><img src="/images/plato.png" alt="icono plato"></label>
+            <input
+            id="file"
+            name="img"
+            type="file"
+            hidden
+            >
+          </div>
+
+          <div class="col-12 col-md-4 d-flex flex-wrap p-4">
+            <h3 style="color:red"><%= typeof message != 'undefined' ? message : null %></h3>
+            <button>Aceptar</button>
+            <a href="/">
+              <button type="button">Cancelar</button>
+            </a>
+            <button type="reset">Limpiar</button>
+          </div>
+        </form>
+  </section>
+</main>
+<section class="ornament">
+</section>
+<%- include('footer') %>

@@ -1,0 +1,54 @@
+<%- include('head') %>
+<link rel="stylesheet" href="/stylesheets/home.css">
+<link rel="stylesheet" href="/stylesheets/home.css">
+<title>Inserta nuevo plato</title>
+
+<%- include('navbar') %>
+<section class="ornament">
+</section>
+<main class="container-xxl">
+  <section class="row p-5 register">
+    <div class="col-12 p-2 d-flex flex-wrap">
+        <h1>Añade un nuevo plato</h1>
+    </div> 
+    <div class="col-12 p-2">
+        <form action="/dishes/addDish/<%= restaurant_id %>" 
+              method="post" 
+              enctype="multipart/form-data">
+          <input 
+            type="text"
+            name="title"
+            placeholder="Nombre del plato"
+          >
+    </div>
+    <div class="col-12 p-2">
+          <input 
+            type="text"
+            name="dish_description"
+            placeholder="Descripcion del plato"
+          >
+    </div>
+    <div class="col-12">
+      <label for="file">Sube una foto:</label>
+      <label class="label-img" for="file"><img src="/images/plato.png" alt="icono plato"></label>
+      <input
+      id="file"
+      name="img"
+      type="file"
+      hidden
+      >
+    </div>
+    <div class="col-12 col-md-4 d-flex flex-wrap p-2">
+          <button>Aceptar</button>
+          <a href="/">
+            <button type="button">Cancelar</button>
+          </a>
+          <button type="reset">Limpiar</button>
+    </div>
+    </form>
+  </section>
+</main>
+<section class="ornament">
+</section>
+
+<%- include('footer') %>

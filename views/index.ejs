@@ -1,0 +1,105 @@
+<%- include('head') %>
+<link rel="stylesheet" href="/stylesheets/home.css">
+<title>Home</title>
+</head>
+<%- include('navbar') %>  
+
+<main>
+  <!-- ------------WELCOME----------------- -->
+
+  <section class="welcome">
+    <div class="container-fluid ">
+      <div class="row d-flex flex-column align-items-center justify-content-center ">
+        <div class=" col-12 col-md-6 d-flex flex-column align-items-center p-5 firsttext">
+          <img src="../images/salad.png" class="salad">
+          <h1>Eat them all!</h1>
+          <h2>Spot the goodies next to you</h2>
+        </div>
+        <div class="col-6">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------ BBB ---------------- -->
+
+  <section class="BBB">
+    <div class="container-xxl">
+      <div class="row d-flex align-items-center p-4">
+        <div class="col-12">
+          <h3>No renuncies a nada</h3>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-evenly align-items-center">
+        <div class="col-12 col-md-3 p-3 d-flex flex-column align-items-center">
+          <div class="square">
+            <img src="../images/yummy.png" alt="icono smile relamiendose" class="iconos">
+          </div>
+          <br>
+          <p><span>B U E N O</span></p>
+        </div>
+
+        <div class="col-12 col-md-3 p-3  d-flex flex-column align-items-center">
+          <div class="square">
+            <img src="/images/stars.png" alt="icono brillitos" class="iconos">
+          </div>
+          <br>
+          <p><span>B O N I T O</span></p>
+        </div>
+
+        <div class="col-12 col-md-3 p-3  d-flex flex-column align-items-center">
+          <div class="square">
+            <img src="/images/dinero.png" alt="icono de una flecha hacia abajo con el símbolo del dolar" class="iconos">
+          </div>
+          <br>
+          <p><span>B A R A T O</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!---------------- RESTAURANTS---------------- -->
+
+  <section class="restaurants">
+    <div class="container-xxl">
+
+      <div class="row">
+        <div class="col-12 d-flex flex-column align-items-center resintro">
+          <h3>Nuestros restaurantes amigos</h3>
+          <p>¿Os acordáis de las páginas amarillas? ¡Eso queremos ser para vosotres! Pero online, un pisapapeles menos por casa. </p>
+          <p>Para tí, que tienes un restaurante y quieres darte a conocer, también tenemos opciones.</p>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-between align-items-center p-5">
+          <% result.forEach(elem => {  %>
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-around align-items-center fichas">
+              <img src="/images/restaurant/<%= elem.picture %>" alt="restaurante" class="picture">
+                <p><span>Nombre:</span> <%= elem.name %> </p>
+                <p><span>Estilo:</span> <%= elem.style %> </p>
+                <p><span>Email:</span> <%= elem.email %> </p>    
+                <a href="/oneRestaurant/<%= elem.restaurant_id %>">
+                  <button class="main-button">Ver más...</button>
+                </a>
+                <div class="d-flex">
+                  <a href="/editRestaurant/<%= elem.restaurant_id %>">
+                    <button>Editar</button>
+                  </a>
+                  <a href="/notDelete/<%= elem.restaurant_id %>">
+                    <button>No mostrar</button>
+                  </a>
+                </div>
+            </div>
+          <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <section class="ornament">
+  </section>
+
+
+</main>
+
+<%- include('footer') %>

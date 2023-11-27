@@ -1,0 +1,64 @@
+<%- include('head') %>
+<link rel="stylesheet" href="/stylesheets/oneRestaurant.css">
+<link rel="stylesheet" href="/stylesheets/home.css">
+
+<%- include('navbar') %>
+<main>
+
+  <section class="container-xxl restaurant">
+    <div class="row d-flex">
+      <div class="col-12 col-md-6 restaurantpic">
+          <img src="/images/restaurant/<%= finalResult.picture %>" alt="restaurante">
+      </div>
+      <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-start info p-5">
+          <h1><%= finalResult.name %> </h1>
+          <h2 ><%= finalResult.style %> </h2>
+          <div>
+            <p> <%= finalResult.restaurant_description %></p>
+            <p> <%= finalResult.email %></p>
+            <p> <%= finalResult.phone_number %></p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid ornament">
+  </section>
+
+  <section class="container-xxl">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <h3>Sus platos</h3>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-between align-items-center p-5">
+      <% finalResult.dishes.forEach(elem => {  %>
+        <div class="col-12 col-md-4 d-flex flex-column justify-content-evenly align-items-center fichas">
+          <img src="/images/food/<%= elem.image %>" alt="comida">
+          <h5><%= elem.title %></h5>
+          <p><%= elem.dish_description %></p>
+            <div class="d-flex">
+              <a href="/dishes/editDish/<%= elem.dish_id %>">
+                <button>Editar</button>
+              </a>
+              <a href="/dishes/deleteDish/<%= finalResult.restaurant_id %>/<%= elem.dish_id %>">
+                <button>Borrar</button>
+              </a>
+            </div>
+        </div>
+      <% }) %>
+
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">   
+          <a href="/dishes/addDish/<%= finalResult.restaurant_id %>">
+            <button>Añadir plato</button>
+          </a>
+        </div>
+      </div>
+
+</div>
+
+
+  </section>
+</main>
+<%- include('footer') %>

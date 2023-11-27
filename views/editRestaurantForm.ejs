@@ -1,0 +1,88 @@
+<%- include('head') %>
+
+<link rel="stylesheet" href="/stylesheets/home.css">
+<link rel="stylesheet" href="/stylesheets/home.css">
+<%- include('navbar') %>
+
+<title>Edita tu restaurante</title>
+
+<section class="ornament">
+</section>
+<main class="container-xxl">
+    <div class="col-12">
+      <h1>Edita tu restaurante</h1>
+    </div>
+      <div class="col-12">
+        <form action="/editRestaurant/<%= result[0].restaurant_id %>" 
+          method="post"
+          enctype="multipart/form-data"
+        >
+        <input
+          type="text"
+          name="name"
+          placeholder="Nombre del restaurante"
+          value="<%= result[0].name %>"
+        >
+        </div>
+        <div class="col-12">
+          <input
+             type="text"
+             name="style"
+             placeholder="Tipo de comida"
+             value="<%= result[0].style %>"
+            >
+        </div>
+        <div class="col-12">
+          <input 
+            type="text"
+            name="restaurant_description"
+            placeholder="Describe tu restaurante"
+            value="<%= result[0].restaurant_description %>"
+         >
+          <input 
+            type="text"
+            name="phone_number"
+            placeholder="Número de teléfono"
+            value="<%= result[0].phone_number %>"
+          >
+        </div>
+        <div class="col-12">
+          <input 
+            type="email"
+            name="email"
+            placeholder="Email"
+            value="<%= result[0].email %>"
+          >
+          <input 
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            value="<%= result[0].password %>"
+          >
+          </div>
+          <div class="col-12">
+            <label for="file">Sube una foto:</label>
+            <label class="label-img" for="file"><img src="/images/plato.png" alt="icono plato"></label>
+            <input
+            id="file"
+            name="img"
+            type="file"
+            hidden
+          >
+    </div>
+          <div class="col-12">
+          <button>Aceptar</button>
+          <a href="/">
+            <button type="button">Cancelar</button>
+          </a>
+          <button type="reset">Reset</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="ornament">
+</section>
+<%- include('footer') %>
